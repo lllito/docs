@@ -59,7 +59,7 @@ OAuth是一个关于授权（authorization）的开放网络标准，在全世�
 
 1. 用户尝试访问一个我们的业务页面，例如: `/user/profile`
 2. 如果用户已经登录，则正常显示该页面
-2. 系统检查当前访问的用户并未登录（从 session 或者其它方式检查），则跳转到**跳转到微信授权服务器**（上面的两种中一种**授权 URL**），并告知微信授权服务器我的**回调URL（redirect_uri=callback.php)**，此时用户看到蓝色的授权确认页面（`scope` 为 `snsapi_base` 时不显示）
+2. 系统检查当前访问的用户并未登录（从 session 或者其它方式检查），则跳转到**跳转到微信授权服务器**（上面的两种中一种**授权 URL**），并告知微信授权服务器我的**回调URL（redirect_uri=callback.php)**，此时用户看到绿色的授权确认页面（`scope` 为 `snsapi_base` 时不显示）
 4. 用户点击确定完成授权，浏览器跳转到**回调URL**: `callback.php` 并带上 `code`： `?code=CODE&state=STATE`。
 5. 在 `callback.php` 中得到 `code` 后，通过 `code` 再次向微信服务器请求得到 **网页授权 access_token** 与 `openid`
 6. 你可以选择拿 `openid` 去请求 API 得到用户信息（可选）
